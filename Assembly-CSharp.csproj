@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CarMovemement.cs" />
     <Compile Include="Assets\Scripts\CollisionCheck.cs" />
+    <Compile Include="Assets\Scripts\ImprovedCarMovement.cs" />
     <Compile Include="Assets\Scripts\LoginFunc.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />

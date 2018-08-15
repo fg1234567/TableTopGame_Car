@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Star
+  - Gift
   layers:
   - Default
   - TransparentFX

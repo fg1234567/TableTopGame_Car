@@ -5,18 +5,40 @@ using UnityEngine.UI;
 
 public class CollisionCheck : MonoBehaviour
 {
-    public Text scoreText;
-    public int score = 0;
+    public Text playerScoreText;
+    public Text loseGameScoreText;
 
+    public int playerScore = 0;
+
+    public ImprovedCarMovement movement;
+
+    public GameObject loselevelPanel;
+    public GameObject duringGamePanel;
+
+
+    private void Awake()
+    {
+        loselevelPanel.SetActive(false);
+        duringGamePanel.SetActive(true);
+
+    }
     void OnCollisionEnter(Collision hit)
     {
         Debug.Log("collision");
 
-        if (hit.gameObject.tag == "Star")
+        if (hit.gameObject.tag == "Gift")
         {
             Destroy(hit.gameObject);
-            score += 1;
-            scoreText.text = "Star : " + score.ToString();
+            playerScore += 1;
+            playerScoreText.text = "Gifts : " + playerScore.ToString();
+        }
+        else if (hit.gameObject.tag == "Obstacle")
+        {
+            movement.enabled = false;
+            loselevelPanel.SetActive(true);
+            duringGamePanel.SetActive(false);
+            loseGameScoreText.text = "Total Score : " + playerScore.ToString();
         }
     }
+
 }
